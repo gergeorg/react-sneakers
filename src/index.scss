@@ -1,0 +1,325 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+}
+
+* {
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #E7F6FF;
+}
+
+h1, h2, h3, h4, h5, p {
+  margin: 0;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  background-color: transparent;
+  border: 1px solid #ECECEC;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+
+
+.wrapper {
+  max-width: 1080px;
+  margin: 50px auto;
+  background: #FFFFFF;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.04);
+  border-radius: 20px;
+
+}
+
+.header {
+  border-bottom: 1px solid #eaeaea;
+}
+
+.header__btn {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+
+.icon {
+  path {
+    transition: stroke .3s ease-in-out, fill .3s ease-in-out;
+  }
+}
+
+.icon-cart {
+  margin-right: 5px;
+}
+
+.icon-cart:hover {
+  path {
+      stroke: #000;
+    }
+}
+
+.icon-person:hover {
+  path {
+    fill: #000;
+  }
+}
+
+
+
+// card
+
+.card {
+  position: relative;
+  padding: 20px;
+  width: 220px;
+  border: 1px solid #F8F8F8;
+  border-radius: 40px;
+  transition: box-shadow .3s ease-in-out, transform .3s ease-in-out;
+
+
+  &:hover {
+    box-shadow: 0px 14px 30px rgba(0, 0, 0, 0.05);
+    transform: translateY(-5px)
+  }
+
+  &__img {
+    width: 113px;
+    height: 112px;
+    margin-bottom: 15px;
+  }
+
+  &__text {
+    margin-bottom: 15px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+  }
+
+  &__price {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+
+    &-text {
+      font-weight: 500;
+      font-size: 11px;
+      line-height: 13px;
+      text-transform: uppercase;
+      opacity: 0.5;
+    }
+  }
+}
+
+.favorite {
+  position: absolute;
+  top: 28px;
+  left: 28px;
+
+  >svg {
+    >path {
+      transition: fill .3s ease-in-out, stroke .3s ease-in-out;
+    }
+  }
+
+
+  > svg {
+    > path {
+      fill: #fff;
+      stroke: #ECECEC;
+    }
+  }
+}
+
+.favorite:hover {
+  position: absolute;
+  top: 28px;
+  left: 28px;
+
+
+  >svg {
+    >path {
+      fill: #FF8585;
+      stroke: #FF8585;
+    }
+  }
+}
+
+.favorite--pressed {
+  background-color: #FEF0F0;
+  border: 1px solid #FEF0F0;
+
+    >svg {
+        >path {
+          fill: #FF8585;
+          stroke: #FF8585;
+        }
+      }
+}
+
+
+.add-cart {
+  transition: border .3s ease-out, fill .3s ease-in-out;
+
+  &:hover {
+
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+
+.search {
+  padding: 15px 18px;
+  border: 1px solid #F3F3F3;
+  border-radius: 10px;
+
+  input {
+    margin-left: 15px;
+    font-size: 16px;
+    border: none;
+  }
+}
+
+.overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+
+.drawer {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 420px;
+  padding: 30px;
+  background-color: #FFFFFF;
+  box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
+}
+
+.drawerItems {
+  flex: 1;
+  overflow: auto;
+}
+
+.cardItem {
+  padding: 15px 20px;
+  background-color: #FFFFFF;
+  border: 1px solid #F3F3F3;
+  border-radius: 20px;
+
+  p {
+    max-width: 170px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  b {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
+
+.cartImg {
+  width: 70px;
+  height: 70px;
+  margin-right: 20px;
+}
+
+.removeItemBtn {
+  transition: border .3s ease-in-out;
+
+  svg {
+      path {
+        transition: fill .3s ease-in-out;
+      }
+    }
+}
+
+.removeItemBtn:hover {
+  border: 1px solid #FF8585;
+  svg {
+    path {
+      fill: #FF8585;
+    }
+  }
+}
+
+.cartTotalBlock {
+  span {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  b {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+  }
+}
+
+
+.dashed {
+  width: 50%;
+  border-bottom:1px dashed #DFDFDF;
+}
+
+.checkoutBtn {
+  padding: 18px 0;
+  width: 100%;
+  background-color: #9DD558;
+  border-radius: 18px;
+  border: 1px solid #9DD558;
+  cursor: pointer;
+  transition: background-color .3s ease-out;
+
+  span {
+    padding-right: 40px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+    background-image: url(../public/img/arrowBtn.svg);
+    background-repeat: no-repeat;
+    background-position: right center;
+  }
+
+  &:hover {
+    background-color: lighten(#9DD558, 5%);
+  }
+
+  &:active {
+    background-color: darken(#9DD558, 5%);
+  }
+
+}
